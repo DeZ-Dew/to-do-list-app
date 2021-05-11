@@ -27,6 +27,11 @@ function loadList(array){
     });
 }
 
+clear.addEventListener("click", function(){
+    localStorage.clear();
+    location.reload();
+});
+
 // To show today's date.
 const options = {weekday : 'short', month: 'short', day: 'numeric', year: 'numeric' };
 const today = new Date();
