@@ -7,16 +7,34 @@ const CHECK = "fa-check-circle";
 const UNCHECK = "fa-circle-thin";
 const LINE_THROUGH = "lineThrough";
 
-let LIST = []
-    , id = 0;
+let LIST, id;
 
-//
+let data = localStorage.getItem("TODO");
+
+if(data){
+    LIST = JSON.parse(data);
+    id = LIST.length;
+    loadList(LIST);
+}else{
+    
+    LIST = [];
+    id = 0;
+}
+// Loading items to users interface
+function loadList(array){
+    array.forEach(function(item){
+        addToDo(item.name, item.id, item.done, item.trash);
+    });
+}
+
+// To show today's date.
 const options = {weekday : 'short', month: 'short', day: 'numeric', year: 'numeric' };
 const today = new Date();
 
 
 dateElement.innerHTML = today.toLocaleDateString("en-US", options);
 
+// Adding "toDO" function.
 function addToDo(toDo, id, done, trash){
 
     if(trash){return;}
@@ -49,6 +67,8 @@ document.addEventListener("keyup", function(event){
                 done : false,
                 trash : false
             });
+            localStorage.setItem("TODO", JSON.stringify(LIST));
+
             id++;
         }
         input.value ="";
@@ -78,4 +98,5 @@ list.addEventListener("click", function(event){
     }else if(elementJob == "delete"){
         removeToDo(element);
     }
+    localStorage.setItem("TODO", JSON.stringify(LIST));
 });
