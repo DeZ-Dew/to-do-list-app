@@ -7,6 +7,9 @@ const CHECK = "fa-check-circle";
 const UNCHECK = "fa-circle-thin";
 const LINE_THROUGH = "lineThrough";
 
+let LIST = []
+    , id = 0;
+
 //
 const options = {weekday : 'short', month: 'short', day: 'numeric', year: 'numeric' };
 const today = new Date();
@@ -38,10 +41,18 @@ document.addEventListener("keyup", function(event){
         const toDo = input.value;
 
         if(toDo){
-            addToDo(toDo);
+            addToDo(toDo, id, false,false);
+
+            LIST.push({
+                name: toDo, 
+                id : id,
+                done : false,
+                trash : false
+            });
+            id++;
         }
         input.value ="";
     }
 });
 
-addToDo("Coffe", 1, true, false);
+
