@@ -14,12 +14,17 @@ const today = new Date();
 
 dateElement.innerHTML = today.toLocaleDateString("en-US", options);
 
-function addToDo(toDo){
+function addToDo(toDo, id, done, trash){
+
+    if(trash){return;}
+
+    const DONE = done ? CHECK : UNCHECK;
+    const LINE = done ? LINE_THROUGH : "";
 
     const item = `<li class="item">
-                    <i class="fa fa-circle-thin co" job="complete" id="0"></i>
-                    <p class="text">${toDo}</p>
-                    <i class="fa fa-trash-o de" job="delete" id="0"></i>
+                    <i class="fa ${DONE} co" job="complete" id="${id}"></i>
+                    <p class="text ${LINE}">${toDo}</p>
+                    <i class="fa fa-trash-o de" job="delete" id="${id}"></i>
                   </li>
                 `;
 
@@ -38,3 +43,5 @@ document.addEventListener("keyup", function(event){
         input.value ="";
     }
 });
+
+addToDo("Coffe", 1, true, false);
