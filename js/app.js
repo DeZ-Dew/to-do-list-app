@@ -8,7 +8,7 @@ const UNCHECK = "fa-circle-thin";
 const LINE_THROUGH = "lineThrough";
 
 //
-const options = {weekday : 'long', month: 'short', day: 'numeric' };
+const options = {weekday : 'short', month: 'short', day: 'numeric', year: 'numeric' };
 const today = new Date();
 
 
@@ -27,4 +27,14 @@ function addToDo(toDo){
     list.insertAdjacentHTML(position, item);
 }
 
-addToDo("drink smoothie")
+
+document.addEventListener("keyup", function(event){
+    if(event.keyCode == 13){
+        const toDo = input.value;
+
+        if(toDo){
+            addToDo(toDo);
+        }
+        input.value ="";
+    }
+});
