@@ -1,5 +1,5 @@
 # to-do list app
- To-Do List app using HTML, JavaScript, and CSS
+ Gotta Do-It, List app using HTML, JavaScript, and CSS
 
  •Hello and thank you for viewing my to-do list app, "Gotta Do-It". This is an app using HTML, JavaScript, and CSS.
  What motivated me to work on this project was to learn more about the JavaScript language. I learned to utilize functions
