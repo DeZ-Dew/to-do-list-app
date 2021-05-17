@@ -1,5 +1,5 @@
 # to-do list app
- To-Do List app using HTML, JavaScript, and CSS
+ Gotta Do-It, List app using HTML, JavaScript, and CSS
 
  •Hello and thank you for viewing my to-do list app, "Gotta Do-It". This is an app using HTML, JavaScript, and CSS.
  What motivated me to work on this project was to learn more about the JavaScript language. I learned to utilize functions
@@ -15,3 +15,4 @@ https://www.youtube.com/watch?v=b8sUhU_eq3g
 Website: https://www.codeexplained.org/
 
 •Sample
+![image](https://user-images.githubusercontent.com/59490521/118532113-94e1ff80-b714-11eb-82bc-e6723e0aaee3.png)
